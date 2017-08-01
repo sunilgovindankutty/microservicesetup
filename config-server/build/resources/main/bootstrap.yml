@@ -1,0 +1,5 @@
+spring:
+    application:
+        name: config-server
+encrypt:
+  key: mysecret1dev1env 

@@ -1,0 +1,21 @@
+
+apply plugin: 'war'
+	
+war {
+    baseName = 'eureka-server'
+    version =  '0.0.1-SNAPSHOT'
+    from('src/main/resources') {
+	    include 'jboss-deployment-structure.xml', 'jboss-web.xml'
+	    into 'WEB-INF'
+	 }
+}
+
+ dependencies {
+    	 compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
+    	 compile 'org.springframework.cloud:spring-cloud-starter-config'
+    	 providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'     
+	}
+	
+springBoot  {
+    buildInfo()
+}

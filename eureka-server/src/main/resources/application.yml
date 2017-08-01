@@ -1,0 +1,26 @@
+server:
+  port: 8761
+  contextPath: /${spring.application.name}
+eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: /${spring.application.name}/info
+    healthCheckUrlPath: /${spring.application.name}/health
+    homePageUrlPath: /${spring.application.name}/dashboard
+  client:
+    # we're running in 'single-node mode'
+    registerWithEureka: false
+#    eurekaServerUrlContext: /${spring.application.name}
+    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/${spring.application.name}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    # this prevents Eureka from assuming network issues when
+    # <85% of the registered services stop sending heartbeats
+    enableSelfPreservation: false    
+  dashboard:
+    path: /dashboard
+    
+logging:
+   file: ${LOG4J_DIR}/eureka-server.log

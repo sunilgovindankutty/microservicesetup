@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: sba
+    jmx:
+        default-domain: sba         
+    cloud:
+        config:
+            uri: ${CONFIG_SERVER_URL:http://localhost:8000}
+            failFast: true
+    profiles:
+        active: ${SDLC_STAGE}    

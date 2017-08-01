@@ -1,0 +1,14 @@
+server:
+    contextPath: /${spring.application.name}
+#    port: 8885
+logging:
+   file: ${LOG4J_DIR}/sba-server.log
+spring:
+   mvc:
+      async:
+         request-timeout: -1
+   boot:
+      admin:
+         discovery:
+            converter:
+                managementContextPath: /management
