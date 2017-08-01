@@ -1,3 +1,0 @@
-connection.gradle.distribution=GRADLE_DISTRIBUTION(WRAPPER)
-connection.project.dir=../sbaadmin-server
-eclipse.preferences.version=1
